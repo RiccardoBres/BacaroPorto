@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 
 /* sass --watch _main.scss output.css */
 
@@ -24,8 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-primary;
-    font-weight: bold !important;
+    font-family: $font-primary!important;
 }
 
 
