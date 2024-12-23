@@ -46,6 +46,11 @@ const StyledTitle = styled(Title)`
           letter-spacing: 0px;
           margin: 0;
     line-height: normal;
+
+     @media screen and (max-width: 479px) {
+      font-size: 5.5rem;
+
+  }
 `;
 
 const StyledSubtitle = styled(Title)`

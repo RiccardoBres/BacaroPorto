@@ -4,6 +4,8 @@ import GlobalStyle from '../Layout/GlobalStyle';
 import HeroSection from '../Components/Organism/Hero/HeroSection';
 import Intro from '../Components/Organism/SectionIntro/Intro';
 import Middle from '../Components/Organism/MiddleSection/Middle';
+import MiddleIntro from '../Components/Organism/MiddleSection/MiddleIntro';
+import Footer from '../Components/Organism/Footer/Footer';
 
 
 const Home = () => {
@@ -13,11 +15,13 @@ const Home = () => {
   }, [])
   return (
     <>
-    <GlobalStyle/>
-    <Nav />
-    <HeroSection/>
-    <Intro/>
-   <Middle/> 
+      <GlobalStyle />
+      <Nav />
+      <HeroSection />
+      <Intro />
+      <Middle />
+      <MiddleIntro />
+      <Footer/>
     </>
   )
 }

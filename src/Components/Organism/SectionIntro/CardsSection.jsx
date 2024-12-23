@@ -15,10 +15,10 @@ const CardsSection = () => {
 
   return (
     <StyledContainer fluid>
-      <StyledRow xs={1} sm={2} md={4} lg={3}>
+      <StyledRow>
         {images.map((image, index) => (
-          <StyledCol key={index}>
-            <Card image={image.src} title={image.title} />
+          <StyledCol key={index} xs={12} sm={6} md={4} lg={4}>
+            <StyledCard image={image.src} title={image.title} />
           </StyledCol>
         ))}
       </StyledRow>
@@ -32,29 +32,34 @@ export default CardsSection;
 
 const StyledContainer = styled(Container)`
   background-color: transparent; 
+  margin-top: 5rem;
   padding: 0;
-  margin-top: 5rem 
+  @media (max-width: 576px) {
+  }
 `;
 
 const StyledRow = styled(Row)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const StyledCol = styled(Col)`
   display: flex;
   justify-content: center;
-  padding: 0; /* Rimuove il padding predefinito di Bootstrap */
 `;
 
 const StyledCard = styled(Card)`
   position: relative;
   background-color: transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge transizione per l'effetto hover */
-  
+
   &:hover {
     transform: translateY(-10px); /* Muove la card verso l'alto quando hover */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Aggiunge una leggera ombra */
+  }
+
+  @media (max-width: 576px) {
+    width: 100%; /* Card occupa il 100% dello spazio disponibile */
   }
 `;

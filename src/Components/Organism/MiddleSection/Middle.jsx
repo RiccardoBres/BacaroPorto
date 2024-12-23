@@ -26,7 +26,9 @@ const StyledMiddleContainer = styled.div`
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
-  color: white; /* Colore del testo */
+  display: flex;
+  align-items: center;
+  color: white; 
 `;
 
 // Overlay trasparente
@@ -42,6 +44,5 @@ const Overlay = styled.div`
 
 // Wrapper per i contenuti
 const ContentWrapper = styled.div`
-  padding: 10% 10%;
 
 `;

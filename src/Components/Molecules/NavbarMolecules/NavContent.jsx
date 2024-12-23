@@ -45,7 +45,7 @@ padding: 1rem 5.5rem;
   transition: background-color 1s;
 
   @media screen and (max-width: 479px) {
-    padding: 0 1rem;
+      padding: 1rem 2.5rem;
 
   }
 `;
@@ -65,6 +65,11 @@ const LogoSection = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media screen and (max-width: 479px) {
+    
+
+  }
 `;
 
 const Separator = styled.div`

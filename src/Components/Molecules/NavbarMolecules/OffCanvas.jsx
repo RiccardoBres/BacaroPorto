@@ -57,8 +57,7 @@ const OffCanvas = ({ show, onHide }) => {
 export default OffCanvas;
 
 const StyledOffcanvas = styled(Offcanvas)`
-  background-color: var(--color-primary);
-  max-width: 40%;
+  background-color: var(--color-dark);
 `;
 
 const StyledOffcanvasHeader = styled(Offcanvas.Header)`

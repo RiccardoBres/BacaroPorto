@@ -29,6 +29,9 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 479px) {
+      margin: 1rem;
 `;
 
 const ImageWrapper = styled.div`
@@ -44,7 +47,7 @@ const CardImage = styled.img`
   transition: filter 0.3s ease;
 
   &:hover {
-      filter: grayscale(20%); /* Applica il filtro bianco e nero */
+      filter: drop-shadow(16px 16px 20px red) invert(75%);
       }
 `;
 
