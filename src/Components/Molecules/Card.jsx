@@ -29,9 +29,6 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
-
-  @media screen and (max-width: 479px) {
-      margin: 1rem;
 `;
 
 const ImageWrapper = styled.div`

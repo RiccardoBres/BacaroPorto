@@ -34,8 +34,7 @@ const StyledScrollContainer = styled.div`
 
   @media screen and (max-width: 479px) {
     left: 10px;
-    gap: 3px;
-
+    gap: 1px;
   }
 `;
 
@@ -49,6 +48,7 @@ const IconWrapper = styled.div`
   }
     @media screen and (max-width: 479px) {
       font-size: 1rem;
+      color: var(--color-dark)
 
 
   }

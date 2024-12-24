@@ -47,6 +47,9 @@ const StyledRow = styled(Row)`
 const StyledCol = styled(Col)`
   display: flex;
   justify-content: center;
+  @media (max-width: 576px) {
+    padding: 1rem;
+  }
 `;
 
 const StyledCard = styled(Card)`
@@ -60,6 +63,6 @@ const StyledCard = styled(Card)`
   }
 
   @media (max-width: 576px) {
-    width: 100%; /* Card occupa il 100% dello spazio disponibile */
+    width: 100%;
   }
 `;
