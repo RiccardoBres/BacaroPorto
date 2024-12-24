@@ -46,7 +46,7 @@ const Intro = () => {
           initial={{ y: 50, opacity: 0 }}
           animate={isParagraphInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 1.2, delay: 0.6 }}
-          className="d-flex flex-column mt-5"
+          className="d-flex flex-column mt-1"
         >
           <Paragraph fontSize="1.3rem" color="var(--color-dark);">
             <strong>Bacaro Bonfim</strong> é o bar do bairro para os moradores de Bonfim e para todos os que procuram explorar diferentes culturas <strong>culinarias</strong>.
@@ -81,16 +81,18 @@ const ContainerIntro = styled.div`
       font-size: 1rem;
     }
 
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-top: 40px;
     padding-bottom: 5rem;
+    text-align: left;
 
     .title-intro {
       font-size: 2.5rem;
+      margin: 0;
     }
       .title-final {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
       
   }

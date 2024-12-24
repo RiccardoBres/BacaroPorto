@@ -7,7 +7,10 @@ import ScrollIndicator from '../../Molecules/ScrollIndicator';
 
 const MiddleIntro = () => {
   const titleRef = useRef(null);
+  const paragraphRef = useRef(null);
   const isInView = useInView(titleRef, { once: true });
+  const isParagraphInView = useInView(paragraphRef, { once: true });
+
 
   return (
     <StyledMiddleIntro>
@@ -33,14 +36,20 @@ const MiddleIntro = () => {
           //Eventi privati
         </motion.h1>
 
-        <div className="d-flex flex-column mt-5">
-          <Paragraph fontSize="1.3rem" color="var(--color-dark)">
+        <motion.div
+          ref={paragraphRef}
+          initial={{ y: 50, opacity: 0 }}
+          animate={isParagraphInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.6 }}
+          className="d-flex flex-column mt-1"
+        >
+          <Paragraph fontSize="1.3rem" color="var(--color-dark);">
             <strong>Bacaro Bonfim</strong> é o bar do bairro para os moradores de Bonfim e para todos os que procuram explorar diferentes culturas <strong>culinarias</strong>.
           </Paragraph>
-          <Paragraph fontSize="1.2rem" color="var(--color-dark)">
+          <Paragraph fontSize="1.2rem" color="var(--color-dark);">
             Bacaro Bonfim acolhe a cidade do Porto de todos os ângulos: a sua localização no coração do bairro permite abrir as portas à autenticidade do Bonfim, enquanto o ambiente acolhedor e envolvente reflete o espírito vibrante e comunitário deste histórico pedaço da cidade.
           </Paragraph>
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -71,6 +80,7 @@ const StyledMiddleIntro = styled.div`
     color: var(--color-dark) !important;
     font-weight: bold !important;
     line-height: 1;
+    margin: 0 0 1rem 0;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -81,9 +91,10 @@ const StyledMiddleIntro = styled.div`
 
     .title-intro {
       font-size: 2.5rem;
+      margin: 0;
     }
       .title-final {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     p {
@@ -96,9 +107,11 @@ const ContainerIntro = styled.div`
   padding: 10% 10%;
 
   @media screen and (max-width: 479px) {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5rem;
+            padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 40px;
+        padding-bottom: 5rem;
+        text-align: left;
   }
 `;
 
@@ -107,7 +120,6 @@ const TitleIntro = styled(Title)`
   color: var(--color-dark) !important;
   font-weight: bold !important;
   line-height: 1;
-  margin-bottom: 0.5rem;
 
   @media screen and (max-width: 479px) {
     font-size: 2rem;
