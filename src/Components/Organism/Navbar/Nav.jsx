@@ -38,11 +38,11 @@ const NavbarContainer = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 100;
   background-color: ${({ isScrolled }) => (isScrolled ? 'var(--color-dark)' : 'transparent')};
     padding: ${({ isScrolled }) => (isScrolled ? '' : '1rem 2rem')};
     transition: background-color 0.3s ease,padding 0.3s, height 0.3s ease; /* Transizione fluida */
-
+    
      @media (max-width: 768px) {
     }
 `;

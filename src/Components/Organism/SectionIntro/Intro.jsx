@@ -4,12 +4,13 @@ import { motion, useInView } from 'framer-motion';
 import Title from '../../Atoms/Title';
 import Paragraph from '../../Atoms/Paragraph';
 import ScrollIndicator from '../../Molecules/ScrollIndicator';
-import CardsSection from './CardsSection';
+import CardsSection from './CardsSection'; // Manteniamo l'import per usarlo in base alla props
 
-const Intro = () => {
+const Intro = ({ title, subtitle, paragraphs, showCardsSection }) => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const paragraphRef = useRef(null);
+
   const isTitleInView = useInView(titleRef, { once: true });
   const isSubtitleInView = useInView(subtitleRef, { once: true });
   const isParagraphInView = useInView(paragraphRef, { once: true });
@@ -26,7 +27,7 @@ const Intro = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <TitleIntro className="title-intro position-relative">
-            Ba-ca-ro
+            {title}
           </TitleIntro>
         </motion.div>
 
@@ -37,7 +38,7 @@ const Intro = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <Title fontSize="2rem" color="var(--color-dark)" className="title-final">
-            //Brunch Bistrot 
+            {subtitle}
           </Title>
         </motion.div>
 
@@ -48,15 +49,14 @@ const Intro = () => {
           transition={{ duration: 1.2, delay: 0.6 }}
           className="d-flex flex-column mt-1"
         >
-          <Paragraph fontSize="1.3rem" color="var(--color-dark);">
-            <strong>Bacaro Bonfim</strong> é o bar do bairro para os moradores de Bonfim e para todos os que procuram explorar diferentes culturas <strong>culinarias</strong>.
-          </Paragraph>
-          <Paragraph fontSize="1.2rem" color="var(--color-dark);">
-            Bacaro Bonfim acolhe a cidade do Porto de todos os ângulos: a sua localização no coração do bairro permite abrir as portas à autenticidade do Bonfim, enquanto o ambiente acolhedor e envolvente reflete o espírito vibrante e comunitário deste histórico pedaço da cidade.
-          </Paragraph>
+          {paragraphs.map((text, index) => (
+            <Paragraph key={index} fontSize="1.5rem" color="var(--color-dark)">
+              {text}
+            </Paragraph>
+          ))}
         </motion.div>
 
-        <CardsSection />
+        {showCardsSection && <CardsSection />}
       </ContainerIntro>
     </StyledIntro>
   );
@@ -65,16 +65,19 @@ const Intro = () => {
 export default Intro;
 
 const StyledIntro = styled.div`
-  min-height: 100vh;
+  min-height: 60vh;
   background-color: var(--color-secondary);
   padding-bottom: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ContainerIntro = styled.div`
   padding: 10% 10%;
   .title-final {
-      text-decoration: underline;
-    }
+    text-decoration: underline;
+  }
 
   @media screen and (max-width: 479px) {
     p {
@@ -91,10 +94,9 @@ const ContainerIntro = styled.div`
       font-size: 2.5rem;
       margin: 0;
     }
-      .title-final {
+    .title-final {
       font-size: 1.2rem;
     }
-      
   }
 `;
 

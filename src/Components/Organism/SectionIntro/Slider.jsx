@@ -9,10 +9,10 @@ function ParallaxText({ children, baseVelocity = 100 }) {
     const scrollVelocity = useVelocity(scrollY);
     const smoothVelocity = useSpring(scrollVelocity, {
         damping: 50,
-        stiffness: 400
+        stiffness: 400,
     });
     const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-        clamp: false
+        clamp: false,
     });
 
     const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
@@ -44,15 +44,20 @@ function ParallaxText({ children, baseVelocity = 100 }) {
     );
 }
 
-function Carousel() {
+function Carousel({ text1, text2 }) {
     return (
         <section className="carousel-hero">
-            <ParallaxText baseVelocity={-5}>LORENZO COCHEO  FABIO SACCARDO LORENZO COCHEO  FABIO SACCARDO s</ParallaxText>
-            <ParallaxText baseVelocity={5}>LORENZO COCHEO  FABIO SACCARDO LORENZO COCHEO  FABIO SACCARDO</ParallaxText>
+            <ParallaxText baseVelocity={-5}>{text1}</ParallaxText>
+            <ParallaxText baseVelocity={5}>{text2}</ParallaxText>
         </section>
     );
 }
 
 export default function Slider() {
-    return <Carousel />;
+    return (
+        <Carousel
+            text1="LORENZO COCHEO  FABIO SACCARDO LORENZO COCHEO  FABIO SACCARDO"
+            text2="LORENZO COCHEO  FABIO SACCARDO LORENZO COCHEO  FABIO SACCARDO"
+        />
+    );
 }

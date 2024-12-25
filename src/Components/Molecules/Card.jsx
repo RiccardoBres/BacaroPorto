@@ -18,8 +18,8 @@ export default Card;
 
 // Styled Components
 const CardContainer = styled.div`
-  width: 380px;
-  height: 350px;
+  width: 95%;
+  height: 380px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -28,6 +28,11 @@ const CardContainer = styled.div`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+   @media screen and (max-width: 479px) {
+      width: 100%;
+
   }
 `;
 

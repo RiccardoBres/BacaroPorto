@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --color-primary: #094021;  /* Verde scuro */
-    --color-secondary: #F2E3B6; /* Beige chiaro */
+    --color-secondary:rgb(247, 236, 205); /* Beige chiaro */
     --color-tertiary: #8C512E; /* Marrone */
     --color-quaternary: #F2AA80; /* Arancione chiaro */
     --color-accent: #D95032; /* Rosso-arancio */

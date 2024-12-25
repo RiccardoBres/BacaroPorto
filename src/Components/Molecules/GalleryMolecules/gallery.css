@@ -1,0 +1,112 @@
+.carousel-section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    scroll-snap-align: center;
+    perspective: 500px;
+    padding: 0rem 2rem;
+    background-color: var(--color-secondary);
+}
+
+.carousel-image-container {
+    aspect-ratio: 4/3;
+    height: 80vh;
+    position: relative;
+    max-height: 90vh;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto !important;
+    height: 100% !important;
+}
+
+@media (max-width: 650px) {
+    .carousel-image-container {
+        height: 50vh;
+        width: auto;
+    }
+
+    .carousel-title {
+        left: calc(68vw) !important;
+    }
+
+    .carousel-image {
+        width: auto !important;
+        margin: 20px;
+    }
+}
+
+.visible {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.title-animated {
+    margin: 0;
+    left: calc(75vw);
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 1.2;
+    position: absolute;
+    z-index: 1;
+    animation: moveTitle 1s ease-in-out infinite alternate;
+}
+
+.carousel-title {
+    margin: 0;
+    color: var(--color-dark);
+    left: calc(75vw);
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1.2;
+    position: absolute;
+    z-index: 1;
+}
+
+.vertical {
+    aspect-ratio: 2/3 !important;
+}
+
+.horizontal {
+    aspect-ratio: 3/2 !important;
+}
+
+.progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: var(--color-accent) !important;
+    bottom: 10px;
+}
+
+.carousel-footer {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: var(--color-secondary);
+}
+
+.carousel-footer a {
+    color: var(--color-light-green);
+}
+
+@keyframes moveTitle {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
