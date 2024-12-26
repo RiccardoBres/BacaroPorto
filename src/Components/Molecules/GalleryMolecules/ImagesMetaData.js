@@ -11,12 +11,15 @@ const firstEditionImages = importAllImages(require.context("../../../Layout/Asse
 const secondEditionImages = importAllImages(require.context("../../../Layout/Assets/Volume2", false, /\.(png|jpe?g|svg)$/));
 const thirdEditionImages = importAllImages(require.context("../../../Layout/Assets/Volume3", false, /\.(png|jpe?g|svg)$/));
 
-const createMetadata = (images, title) => {
+const createMetadata = (images, titles) => {
     return Object.keys(images).map((imageName, index) => {
         const imagePath = images[imageName];
         if (typeof imagePath !== 'string') {
             console.error(`Invalid imagePath at index ${index}:`, imagePath);
         }
+
+        // Usa il titolo corrispondente o un fallback generico
+        const title = titles[index] || `Untitled ${index + 1}`;
         return {
             key: index,
             title: title,
@@ -26,6 +29,12 @@ const createMetadata = (images, title) => {
     });
 };
 
-export const Volume1Metadata = createMetadata(firstEditionImages, "First Edition");
-export const Volume2Metadata = createMetadata(secondEditionImages, "Second Edition");
-export const Volume3Metadata = createMetadata(thirdEditionImages, "Third Edition");
+// Array di titoli specifici per ciascuna raccolta di immagini
+const Volume1Titles = ["Baccalà", "Mozzarella e Pomodorini", "Bruschetta"];
+const Volume2Titles = ["Landscape", "Sunset", "Mountain"];
+const Volume3Titles = ["Forest", "Beach", "Desert"];
+
+// Genera i metadati con titoli specifici
+export const Volume1Metadata = createMetadata(firstEditionImages, Volume1Titles);
+export const Volume2Metadata = createMetadata(secondEditionImages, Volume2Titles);
+export const Volume3Metadata = createMetadata(thirdEditionImages, Volume3Titles);

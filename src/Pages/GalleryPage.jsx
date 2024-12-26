@@ -7,6 +7,7 @@ import Footer from '../Components/Organism/Footer/Footer';
 import HeroImage from '../Layout/Assets/bacaro-hero-black.jpg';
 import { Gallery } from '../Components/Molecules/GalleryMolecules/Galley';
 import { Volume1Metadata } from '../Components/Molecules/GalleryMolecules/ImagesMetaData';
+import '../Components/Molecules/GalleryMolecules/gallery.css'
 
 
 
@@ -25,7 +26,7 @@ const GalleryPage = () => {
                 overlay={true}
                 backgroundImage={HeroImage}
                 title='GALLERY'
-                subtitle='MODERNA'
+                subtitle='PORTO'
                 smallText='GASTRONOMIA' />
             <div className="container-carousel-section">
                 <motion.article
@@ -34,7 +35,7 @@ const GalleryPage = () => {
                     exit={{ opacity: 0, transition: { duration: 1 } }}
                 >
                     <Gallery
-                        title="First Event Gallery"
+                        title="CI-CCHE-TTI"
                         titleWidth={8.2}
                         photos={Volume1Metadata}
                     />

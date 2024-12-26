@@ -4,12 +4,13 @@ import Hr from '../../Atoms/Hr';
 import Image from '../../Atoms/Image';
 import Logo from '../../../Layout/Assets/Logo-removebg.png'
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Title from '../../Atoms/Title';
 
 const OffCanvas = ({ show, onHide }) => {
     const navigate = useNavigate();
 
     const navigateTo = (path) => {
-        onHide(); // Chiude l'offcanvas prima di navigare
+        onHide(); 
         navigate(path);
     };
 
@@ -18,19 +19,19 @@ const OffCanvas = ({ show, onHide }) => {
             <StyledOffcanvasHeader closeButton/>
             <StyledOffcanvasBody>
                 <NavList>
-                    <NavItem onClick={() => navigateTo('/')}>Home</NavItem>
-                    <NavItem onClick={() => navigateTo('/gallery')}>Menu</NavItem>
-                    <NavItem onClick={() => navigateTo('/artists')}>Beyond the Artist</NavItem>
-                    <NavItem onClick={() => navigateTo('/music')}>Beyond the Music</NavItem>
+                    <Title onClick={() => navigateTo('/')}>Home</Title>
+                    <Title onClick={() => navigateTo('/gallery')}>Menu</Title>
+                    <Title onClick={() => navigateTo('/artists')}>Beyond the artists</Title>
+                    <Title onClick={() => navigateTo('/music')}>Beyond the music</Title>
                 </NavList>
                 <Hr />
                 <NavList>
-                    <NavItem onClick={() => navigateTo('/help')}>Help & Info</NavItem>
-                    <NavItem onClick={() => navigateTo('/getting-here')}>Getting Here</NavItem>
+                    <Title onClick={() => navigateTo('/help')}>Help & Info</Title>
+                    <Title onClick={() => navigateTo('/getting-here')}>Getting Here</Title>
                 </NavList>
                 <Hr />
                 <NavList>
-                    <NavItem onClick={() => navigateTo('/contact-us')}>Contact Us</NavItem>
+                    <Title onClick={() => navigateTo('/contact-us')}>Contact Us</Title>
                 </NavList>
 
             </StyledOffcanvasBody>

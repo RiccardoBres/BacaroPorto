@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion, useInView } from 'framer-motion';
 import Title from '../../Atoms/Title';
 
+
 const HeroSection = ({ backgroundImage, title, subtitle, smallText, overlay }) => {
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
@@ -11,7 +12,6 @@ const HeroSection = ({ backgroundImage, title, subtitle, smallText, overlay }) =
 
     return (
         <StyledHero backgroundImage={backgroundImage}>
-            {/* Condizione per visualizzare l'overlay */}
             {overlay && <Overlay />}
             
             <motion.div
@@ -53,7 +53,6 @@ export default HeroSection;
 
 const StyledHero = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
-  background-attachment: fixed;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -82,7 +81,6 @@ const Overlay = styled.div`
 
 const StyledTitle = styled(motion.h1)`
   font-size: 8.5rem;
-  font-family: 'Oi', fantasy;
   font-weight: 400 !important;
   font-style: normal;
   letter-spacing: 0px;
@@ -90,20 +88,24 @@ const StyledTitle = styled(motion.h1)`
 
   line-height: normal;
   color: var(--color-secondary);
-  z-index: 2;  /* Deve essere sopra l'overlay */
+  z-index: 2;  
   
   @media screen and (max-width: 500px) {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 `;
 
 const StyledSubtitle = styled(motion.h2)`
   font-size: 2.5rem;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   color: var(--color-secondary);
   margin: 0;
   padding: 0;
 
   z-index: 2; 
+
+  @media screen and (max-width: 500px) {
+    font-size: 2.5rem;
+  }
 `;

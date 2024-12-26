@@ -10,7 +10,7 @@ function useParallax(value, distance = "50vh") {
 
 const ease = [0.08, 0.37, 0.45, 0.89];
 
-export function ImageGallery({ alt, imagePath, index }) {
+export function ImageGallery({ alt, imagePath, index, title }) {
     const [pulsing, setPulsing] = useState(true);
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
@@ -42,7 +42,7 @@ export function ImageGallery({ alt, imagePath, index }) {
                 style={{ y }}
                 initial={{ x: 100 }}
                 animate={{ x: 0, transition: { delay: 0.5, duration: 1, ease } }}
-            >{`#00${index + 1}`}</motion.h2>
+            >{`#00${index + 1}` + ' ' + title}</motion.h2>
         </motion.section>
     );
 }

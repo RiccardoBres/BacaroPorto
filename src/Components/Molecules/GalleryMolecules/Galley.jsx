@@ -47,6 +47,7 @@ export function Gallery({ title, titleWidth, photos }) {
                         alt={item.alt}
                         key={index}
                         imagePath={item.imagePath}
+                        title={item.title}
                     />
                 );
             })}

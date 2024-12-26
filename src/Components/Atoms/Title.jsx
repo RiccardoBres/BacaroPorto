@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = ({ children, level, fontSize, color, margin , className}) => {
+const Title = ({ children, level, fontSize, color, margin , className, onClick}) => {
   const Tag = `h${level || 1}`; // Default: h1
   return (
-    <StyledTitle as={Tag} fontSize={fontSize} color={color} margin={margin} className={className}>
+    <StyledTitle as={Tag} fontSize={fontSize} color={color} margin={margin} className={className} onClick={onClick}>
       {children}
     </StyledTitle>
   );

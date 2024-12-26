@@ -4,7 +4,6 @@
     position: relative;
     scroll-snap-align: center;
     perspective: 500px;
-    padding: 0rem 2rem;
     background-color: var(--color-secondary);
 }
 
@@ -14,7 +13,7 @@
     position: relative;
     max-height: 90vh;
     margin: 20px;
-    overflow: hidden;
+    padding-top: 5rem;
 }
 
 .carousel-image {
@@ -28,13 +27,18 @@
 }
 
 @media (max-width: 650px) {
+
+    .carousel-image-container{
+        overflow: hidden;
+    }
     .carousel-image-container {
         height: 50vh;
         width: auto;
     }
 
     .carousel-title {
-        left: calc(68vw) !important;
+        left: calc(65vw) !important;
+        font-size: 24px;
     }
 
     .carousel-image {
@@ -67,7 +71,6 @@
     color: var(--color-dark);
     left: calc(75vw);
     font-weight: 900;
-    letter-spacing: -3px;
     line-height: 1.2;
     position: absolute;
     z-index: 1;
